@@ -1,10 +1,11 @@
 import React from "react";
 import logo from '../resources/logo.svg';
-import '../styles/App.css'
+import { SearchBar } from "../components";
 
 const Home = () => {
     return (
         <div className="App">
+            <SearchBar />
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
                 <p>
