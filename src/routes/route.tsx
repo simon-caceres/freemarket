@@ -1,14 +1,20 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home } from '../containers';
+import { Routes, Route } from "react-router-dom";
+import useQuery from "./useQuery";
+import { Home, ItemDetail, ItemSearch } from '../containers';
+import { SearchBar } from "../components";
 
 const Router = () => {
+  const query = useQuery();
   return (
-    <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<Home/>}/>
-        </Routes>
-    </BrowserRouter>
+    <div>
+      <SearchBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/items" element={<ItemSearch search={query.get("search")} />} />
+        <Route path="/items/:id" element={<ItemDetail />} />
+      </Routes>
+    </div>
   );
 };
 

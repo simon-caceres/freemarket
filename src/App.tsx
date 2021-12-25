@@ -1,9 +1,9 @@
 import React from 'react';
-import Router from './routes/route';
+import RouterContainer from './routes/Index';
 
 function App() {
   return (
-    <Router />
+    <RouterContainer />
   );
 }
 

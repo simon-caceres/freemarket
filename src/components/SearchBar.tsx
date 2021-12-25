@@ -1,5 +1,5 @@
 import React from 'react';
-const logo = require('../resources/logo__small.png');
+const logo: string = require('../resources/logo__small.png');
 
 const SearchBar = () => {
     return (
