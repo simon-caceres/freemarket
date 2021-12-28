@@ -1,21 +1,25 @@
 import React from "react";
-
-
-type ListProducts = {
-    items?: Products[];
-}
-
-interface Products {
+import {ItemCard} from '../components';
+interface Product {
     id?: string;
     title?: string;
     thumbnail?: string;
 }
 
-const ListItem = ({items}: ListProducts) => {
-    console.log(items)
+interface Items {
+    items: Array<Product>
+}
+
+const ListItem = ({ items }: Items ) => {
     return (
-        <h1>Texto</h1>
-    )
+        <>
+            {
+                items.map((item: Product, i: number) => (
+                    <ItemCard krey={i} item={item} />
+                ))
+            }
+        </>
+    );
 };
 
 export default ListItem;

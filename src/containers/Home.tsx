@@ -1,27 +1,14 @@
 import React, {useEffect, useState} from "react";
-import axios from "axios";
 import { ListItem } from "../components";
+import { getBaseData } from "../services/Index";
 
 const Home = () => {
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState([] as any[]);
     const [loading, setLoading] = useState(true);
 
     const getData = async () => {
-        setLoading(true);
-        try {
-            const res = await axios.get('https://api.mercadolibre.com/sites/MLA/search?q=:query');
-            if (res.status === 200 || res.status === 201) {
-                const {data : {results}} = res;
-                setItems(results);
-                setLoading(false);
-            } else {
-                console.log(res)
-                setLoading(false);
-            }
-        } catch (error) {
-            console.warn(error)
-            setLoading(false);
-        }
+        const res: any = await getBaseData(setLoading);
+        setItems(res);
     }
     useEffect(() => {
         getData();

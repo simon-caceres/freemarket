@@ -5,10 +5,10 @@ const SearchBar = () => {
     return (
         <nav className="navbar  navbar-expand-lg navbar-warning bg-warning px-10">
             <form className="container-fluid mx-auto">
-                <a className="navbar-brand" href='/'>
-                    <img src={logo} alt="" />
-                </a>
                 <div className="input-group">
+                    <a className="navbar-brand" href='/'>
+                        <img src={logo} alt="" />
+                    </a>
                     <input type="text" className="form-control" placeholder="Nunca dejes de buscar" aria-label="Username" aria-describedby="basic-addon1" />
                     <span className="input-group-text" id="basic-addon1">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
