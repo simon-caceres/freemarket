@@ -1,15 +1,34 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
+import { getItemDetail } from "../services/Index";
+import { ItemDetailed } from "../components";
 
 const ItemDetail = () => {
     const params = useParams()
-    const {id} = params
+    const {id}: any = params
+
+    const [info, setInfo] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    const getData = async () => {
+        const res: any = await getItemDetail(setLoading, id);
+        setInfo(res);
+    }
+    useEffect(() => {
+        getData();
+    }, [])
+
     return (
-        <div className="card">
-            <img src="..." className="card-img-top" alt="..." />
-            <div className="card-body">
-                <p className="card-text">{id}.</p>
-            </div>
+        <div className="container pt-5">
+            {
+                loading ? (
+                    <div className="spinner-grow" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </div>
+                ) : (
+                    <ItemDetailed info={info} />
+                )
+            }
         </div>
     );
 };

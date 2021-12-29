@@ -12,13 +12,13 @@ interface Items {
 
 const ListItem = ({ items }: Items ) => {
     return (
-        <>
+        <div className="row mt-4">
             {
                 items.map((item: Product, i: number) => (
                     <ItemCard krey={i} item={item} />
                 ))
             }
-        </>
+        </div>
     );
 };
 

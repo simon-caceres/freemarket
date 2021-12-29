@@ -15,10 +15,14 @@ const Home = () => {
     }, [])
 
     return (
-        <div className="App">
+        <div className="container">
             {
                 loading 
-                    ? <h1>Cargando ....</h1>
+                    ?   (
+                            <div className="spinner-grow" role="status">
+                                <span className="visually-hidden">Loading...</span>
+                            </div>
+                        )
                     : <ListItem items={items} />
             }
         </div>

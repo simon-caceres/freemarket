@@ -20,3 +20,26 @@ code {
   padding-left: ($spacer * 6) !important;
   padding-right: ($spacer * 6) !important;
 }
+
+.card {
+  border-radius: 15px !important;
+}
+
+.alertContainer {
+  position: absolute;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+  width: 50vw;
+  padding-top: 10vw;
+  z-index: 3;
+}
+
+.box {
+  transition: box-shadow .3s;
+  cursor: pointer;
+}
+.box:hover {
+  box-shadow: 0 0 20px rgba(33,33,33,.2); 
+}
