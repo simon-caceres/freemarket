@@ -1,26 +1,23 @@
 import React from "react";
 
-const ItemCard = ({ item, key }: any) => {
+const ItemCard = (prop: any) => {
+    const {item, id, navigateToItemInfo} = prop;
     const {
-        id,
+        id: item_id,
         title,
         thumbnail,
         price,
         address: {state_name}
     } = item;
-
-    const navigateToItemInfo = (evt: any) => {
-        evt.preventDefault();
     
-        return window.location.replace( `/items/${id}`)
-    };
 
     return (
         <div className="col-md-offset-1 col-md-6 col-sm-12">
-            <div 
-                key={key}
+            <div
+                id={`item${id}`}
+                key={id}
                 className="card mb-3 box p-2"
-                onClick={(evt) => navigateToItemInfo(evt)}
+                onClick={(evt) => navigateToItemInfo(evt, item_id)}
             >
                 <div className="row g-0">
                     <div className="col-md-4 col-md-offset-3">
