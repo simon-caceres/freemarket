@@ -8,10 +8,10 @@ const Spinner = () => (
         <div className="spinner-grow" role="status">
             <span className="visually-hidden">{LOADING}</span>
         </div>
-        <div className="spinner-grow" role="status">
+        <div className="spinner-grow ml-2" role="status">
             <span className="visually-hidden">{LOADING}</span>
         </div>
-        <div className="spinner-grow" role="status">
+        <div className="spinner-grow ml-2" role="status">
             <span className="visually-hidden">{LOADING}</span>
         </div>
     </div>

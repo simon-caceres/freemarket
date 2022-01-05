@@ -4,6 +4,7 @@ import ItemCard from "./itemCard";
 import Alert from "./Alert";
 import ItemDetailed from "./ItemDetailed";
 import Spinner from "./Spinner";
+import Pagination from "./Pagination";
 
 export {
     SearchBar,
@@ -12,4 +13,5 @@ export {
     Alert,
     ItemDetailed,
     Spinner,
+    Pagination,
 };

@@ -16,6 +16,12 @@ const itemStr = {
     LOADING: 'Loading...'
 }
 
+const paginationStr = {
+    LEFT_PAGE: 'LEFT',
+    RIGHT_PAGE: 'RIGHT',
+}
+
 export {
     itemStr,
+    paginationStr,
 }

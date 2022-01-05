@@ -13,7 +13,7 @@ const ItemCard = (prop: any) => {
     const navigate = (e: any, i: any) => navigateToItemInfo(e, i);
 
     return (
-        <div className="col-md-offset-1 col-md-6 col-sm-12">
+        <div className="col-md-offset-1 col-lg-6 col-sm-12">
             <div
                 id={`item${id}`}
                 key={id}
@@ -22,7 +22,7 @@ const ItemCard = (prop: any) => {
             >
                 <div className="row g-0">
                     <div className="col-md-4 col-md-offset-3">
-                        <div className="row justify-content-center" style={{height: 250}}>
+                        <div className="row justify-content-center detailed-img">
                             <img 
                                 src={thumbnail} 
                                 className="text-center" 

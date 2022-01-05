@@ -57,8 +57,19 @@ code {
 }
 
 .spinner-center {
-  width: 10%;
+  width: 90%;
   margin: auto;
   margin-top: 25vh;
   justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.detailed-img {
+  height: 20rem !important;
+}
+
+.pagination {
+  width: fit-content;
+  margin: auto;
 }
