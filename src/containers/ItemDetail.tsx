@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import { getItemDetail } from "../services/Index";
-import { ItemDetailed } from "../components";
+import { ItemDetailed, Spinner } from "../components";
 
 const ItemDetail = () => {
     const params = useParams()
@@ -21,13 +21,9 @@ const ItemDetail = () => {
     return (
         <div className="container pt-5">
             {
-                loading ? (
-                    <div className="spinner-grow" role="status">
-                        <span className="visually-hidden">Loading...</span>
-                    </div>
-                ) : (
-                    <ItemDetailed info={info} />
-                )
+                loading 
+                ? <Spinner /> 
+                : <ItemDetailed info={info} />
             }
         </div>
     );

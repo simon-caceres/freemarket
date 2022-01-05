@@ -1,5 +1,5 @@
 import React from "react";
-
+import { FORMATNUMBER } from "../helper";
 const ItemCard = (prop: any) => {
     const {item, id, navigateToItemInfo} = prop;
     const {
@@ -9,7 +9,8 @@ const ItemCard = (prop: any) => {
         price,
         address: {state_name}
     } = item;
-    
+
+    const navigate = (e: any, i: any) => navigateToItemInfo(e, i);
 
     return (
         <div className="col-md-offset-1 col-md-6 col-sm-12">
@@ -17,7 +18,7 @@ const ItemCard = (prop: any) => {
                 id={`item${id}`}
                 key={id}
                 className="card mb-3 box p-2"
-                onClick={(evt) => navigateToItemInfo(evt, item_id)}
+                onClick={(evt) => navigate(evt, item_id)}
             >
                 <div className="row g-0">
                     <div className="col-md-4 col-md-offset-3">
@@ -37,7 +38,7 @@ const ItemCard = (prop: any) => {
                     </div>
                     <div className="col-md-6">
                         <div className="card-body mt-5">
-                            <h5 className="card-title">$ {price}</h5>
+                            <h5 className="card-title">{FORMATNUMBER(price)}</h5>
                             <p className="card-text">{title}.</p>
                         </div>
                     </div>

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { BASEURL } from "./helper";
+import { BASEURL } from "../helper";
 
 const SEARCH: Function = (query: string) => { return `/sites/MLA/search?q=:${query !== undefined ? query : 'query'}`};
 const ITEMDETAIL: Function = (id: string) => {return `/items/${id}`};

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { ListItem } from "../components";
+import { ListItem, Spinner } from "../components";
 import { getBaseData } from "../services/Index";
 
 const ItemSearch = ({ search }: any) => {
@@ -18,11 +18,7 @@ const ItemSearch = ({ search }: any) => {
         <div className="container">
             {
                 loading 
-                    ? (
-                        <div className="spinner-grow" role="status">
-                            <span className="visually-hidden">Loading...</span>
-                        </div>
-                    )
+                    ? <Spinner />
                     : <ListItem items={items} />
             }
         </div>

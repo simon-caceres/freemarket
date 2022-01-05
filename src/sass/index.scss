@@ -3,9 +3,8 @@ $spacer: 1rem !default;
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #e2e2e2;
@@ -42,4 +41,24 @@ code {
 }
 .box:hover {
   box-shadow: 0 0 20px rgba(33,33,33,.2); 
+}
+
+.btn-block {
+  width: 100% !important;
+}
+
+.text-justify {
+  text-align:  justify !important;
+}
+
+.bordered {
+  border: 1px solid rgba(0,0,0,.1) !important;
+  border-radius: 15px !important;
+}
+
+.spinner-center {
+  width: 10%;
+  margin: auto;
+  margin-top: 25vh;
+  justify-content: center;
 }

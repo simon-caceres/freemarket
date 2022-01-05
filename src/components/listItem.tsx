@@ -1,6 +1,5 @@
 import React from "react";
 import {ItemCard} from '../components';
-import {createMemoryHistory} from 'history'
 interface Product {
     id?: string;
     title?: string;
@@ -11,11 +10,10 @@ interface Items {
 }
 
 const ListItem = ({ items }: Items ) => {
-    const history = createMemoryHistory()
     const navigateToItemInfo = (evt: any, item_id: number) => {
         evt.preventDefault();
     
-        return history.push( `/items/${item_id}`)
+        return window.location.replace(`/items/${item_id}`)
     };
     return (
         <div className="row mt-4">

@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
-import { ListItem } from "../components";
+import { ListItem, Spinner } from "../components";
 import { getBaseData } from "../services/Index";
 
 const Home = () => {
     const [items, setItems] = useState([] as any[]);
     const [loading, setLoading] = useState(true);
-
+    
     const getData = async () => {
         const res: any = await getBaseData(setLoading);
         setItems(res);
@@ -18,11 +18,7 @@ const Home = () => {
         <div className="container">
             {
                 loading 
-                    ?   (
-                            <div className="spinner-grow" role="status">
-                                <span className="visually-hidden">Loading...</span>
-                            </div>
-                        )
+                    ?  <Spinner />
                     : <ListItem items={items} />
             }
         </div>

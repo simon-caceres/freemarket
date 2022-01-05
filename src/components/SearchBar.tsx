@@ -1,11 +1,22 @@
 import React, {useState} from 'react';
 import { Alert } from '.';
+import { itemStr } from '../customization';
 
 const logo: string = require('../resources/logo__small.png');
 
 const SearchBar = () => {
     const [query, setquery] = useState('');
     const [showAlert, setShowAlert] = useState(false);
+
+    const {
+        warning: {
+            MESSAGE,
+            WARNING,
+        },
+        FORM: {
+            PLACEHOLDER,
+        }
+    } = itemStr;
 
     const setSearchLogic = (evt: any) => {
         evt.preventDefault();
@@ -29,14 +40,12 @@ const SearchBar = () => {
                     <input 
                         type="text"
                         className="form-control"
-                        placeholder="Nunca dejes de buscar"
+                        placeholder={PLACEHOLDER}
                         aria-label={query}
-                        aria-describedby="basic-addon1"
                         onChange={(evt) => setquery(evt.target.value)}
                     />
                     <a 
                         className="input-group-text"
-                        id="basic-addon1"
                         onClick={(evt) => setSearchLogic(evt)}
                         href='/#'
                     >
@@ -48,8 +57,8 @@ const SearchBar = () => {
             </form>
             { showAlert && 
                 <Alert 
-                    message="El Buscador no debe estar vacio"
-                    type="warning"
+                    message={MESSAGE}
+                    type={WARNING}
                     setShowAlert={setShowAlert}
                 />
             }
