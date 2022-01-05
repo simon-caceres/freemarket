@@ -1,7 +1,8 @@
 import React from "react";
 import { paginationStr } from "../customization";
+import { PaginationPRops } from "../types";
 
-const Pagination = (props: any) => {
+const Pagination = (props: PaginationPRops) => {
     const {
         totalRecords,
         totalPages,

@@ -1,6 +1,8 @@
 import React from "react";
 import { FORMATNUMBER } from "../helper";
-const ItemCard = (prop: any) => {
+import { ItemCardProps } from "../types";
+
+const ItemCard = (prop: ItemCardProps) => {
     const {item, id, navigateToItemInfo} = prop;
     const {
         id: item_id,

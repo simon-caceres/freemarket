@@ -13,6 +13,10 @@ const itemStr = {
     FORM: {
         PLACEHOLDER: 'Nunca dejes de buscar'
     },
+    CONDITION: {
+        NEW: 'Nuevo',
+        USE: 'Usado',
+    },
     LOADING: 'Loading...'
 }
 

@@ -1,13 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {ItemCard, Pagination} from '../components';
-interface Product {
-    id?: string;
-    title?: string;
-    thumbnail?: string;
-}
-interface Items {
-    items: Array<Product>
-}
+import { Items, PaginationData, Product } from "../types";
 
 const ListItem = ({ items }: Items ) => {
     const totalRecords = items.length;
@@ -23,12 +16,10 @@ const ListItem = ({ items }: Items ) => {
         return window.location.replace(`/items/${item_id}`)
     };
 
-    const onPageChanged = (data: any) => {
+    const onPageChanged = (data: PaginationData) => {
         const { currentPage: currPage, totalPages: totalPag, pageLimit } = data;
-        console.log(data)
         const offset = (currentPage - 1) * pageLimit;
         const newItems: any = items.slice(offset, offset + pageLimit);
-    
         setCurrentPage(currPage);
         setCurrentItems(newItems);
         setTotalPages(totalPag);
@@ -37,12 +28,7 @@ const ListItem = ({ items }: Items ) => {
     useEffect(() => {
         if (items.length) {
             setTotalPages(Math.floor(items.length / 4))
-            onPageChanged({
-                currentPage: 1,
-                pageLimit: 4,
-                totalPages: Math.floor(items.length / 4),
-                totalRecords: items.length,
-            })
+            setCurrentItems(items.slice(0, 0 + pageLimit))
         }
     }, [items])
 
@@ -50,7 +36,7 @@ const ListItem = ({ items }: Items ) => {
         <div className="row justify-center mt-4 p-4">
             {
                 currentItems.map((item: Product, i: number) => (
-                    <ItemCard key={i} item={item} navigateToItemInfo={navigateToItemInfo} />
+                    <ItemCard id={i} item={item} navigateToItemInfo={navigateToItemInfo} />
                 ))
             }
             <div className="col-12">
