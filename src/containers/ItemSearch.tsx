@@ -1,13 +1,14 @@
 import React, {useEffect, useState} from "react";
 import { ListItem, Spinner } from "../components";
 import { getBaseData } from "../services/Index";
+import { Product } from "../types";
 
 const ItemSearch = ({ search }: any) => {
-    const [items, setItems] = useState([] as any[]);
+    const [items, setItems] = useState([] as Product[]);
     const [loading, setLoading] = useState(true);
 
     const getData = async () => {
-        const res: any = await getBaseData(setLoading, search);
+        const res: Product[] = await getBaseData(setLoading, search);
         setItems(res);
     }
     useEffect(() => {

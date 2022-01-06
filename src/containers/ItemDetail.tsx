@@ -13,8 +13,7 @@ const ItemDetail = () => {
     const [loading, setLoading] = useState(true);
 
     const getData = async () => {
-        const res: ItemDetailedType = await getItemDetail(setLoading, id);
-        setInfo(res);
+        await getItemDetail(setLoading, id, setInfo);
     }
 
     const dataCallBack = useCallback(

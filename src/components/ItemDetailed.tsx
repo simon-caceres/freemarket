@@ -6,13 +6,18 @@ import { InfoElement } from "../types";
 const ItemDetailed = ({ info }: InfoElement) => {
     const {
         condition,
-        base_price,
+        price: {
+            amount,
+            currency,
+        },
         initial_quantity,
         available_quantity,
-        thumbnail,
+        picture,
         title,
-        plain_text
+        description
     } = info;
+
+    console.log(info)
 
     const { 
         itemDetail: {
@@ -31,7 +36,7 @@ const ItemDetailed = ({ info }: InfoElement) => {
             <div className="row">
                 <div className="col-sm-12 col-lg-8 text-center" style={{height: '50vh'}}>
                     <img 
-                        src={thumbnail} 
+                        src={picture} 
                         className="card-img-top"
                         style={{
                             maxHeight: '100%',
@@ -45,14 +50,14 @@ const ItemDetailed = ({ info }: InfoElement) => {
                 <div className="col-sm-12 col-lg-4 bordered p-4">
                     <p className="card-text"><small className="text-muted">{condition === 'new' ? NEW : USE} - {initial_quantity - available_quantity} {SELL} </small></p>
                     <h5 className="card-title">{title}</h5>
-                    <h1 className="card-text mt-4">{FORMATNUMBER(base_price)}</h1>
+                    <h1 className="card-text mt-4">{currency} {FORMATNUMBER(amount)}</h1>
                     <button className="btn btn-primary btn-block btn-lg mt-5">{BUY}</button>
                 </div>
             </div>
             <div className="row">
                 <div className="card-body mt-4 pr-4 col-sm-12 col-lg-8">
                     <h1 className="card-title">{DESCR_PROD}</h1>
-                    <p className="card-text mt-4 text-justify">{plain_text}</p>
+                    <p className="card-text mt-4 text-justify">{description}</p>
                 </div>
                 <div className="col-sm-12 col-lg-4"></div>
             </div>

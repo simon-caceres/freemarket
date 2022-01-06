@@ -7,8 +7,11 @@ const ItemCard = (prop: ItemCardProps) => {
     const {
         id: item_id,
         title,
-        thumbnail,
-        price,
+        picture,
+        price: {
+            amount,
+            currency,
+        },
         address: {state_name}
     } = item;
 
@@ -26,7 +29,7 @@ const ItemCard = (prop: ItemCardProps) => {
                     <div className="col-md-4 col-md-offset-3">
                         <div className="row justify-content-center detailed-img">
                             <img 
-                                src={thumbnail} 
+                                src={picture} 
                                 className="text-center" 
                                 style={{
                                     maxHeight: '100%',
@@ -40,7 +43,7 @@ const ItemCard = (prop: ItemCardProps) => {
                     </div>
                     <div className="col-md-6">
                         <div className="card-body mt-5">
-                            <h5 className="card-title">{FORMATNUMBER(price)}</h5>
+                            <h5 className="card-title">{currency} {FORMATNUMBER(amount)}</h5>
                             <p className="card-text">{title}.</p>
                         </div>
                     </div>

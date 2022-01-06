@@ -1,11 +1,14 @@
 interface Product {
     id: number,
     title: string
-    thumbnail: string
-    price: string
+    picture: string
     address: {
         state_name: string
-    }
+    },
+    price: {
+        amount: string
+        currency: string
+    },
 }
 
 interface Items {
@@ -33,12 +36,15 @@ interface InfoElement {
 
 interface ItemDetailedType {
     condition: string
-    base_price: string
+    price: {
+        amount: string
+        currency: string
+    },
     initial_quantity: number
     available_quantity: number
-    thumbnail: string
+    picture: string
     title: string
-    plain_text: string
+    description: string
 }
 
 interface ItemCardProps {

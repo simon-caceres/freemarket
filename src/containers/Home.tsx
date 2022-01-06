@@ -9,6 +9,7 @@ const Home = () => {
     
     const getData = async () => {
         const res: Product[] = await getBaseData(setLoading);
+        console.log(res)
         setItems(res);
     }
     useEffect(() => {
